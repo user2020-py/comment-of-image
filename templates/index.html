@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>Anime's Image</title>
+</head>
+<body>
+    <div id="images">
+        <img src="{{url_for('static', filename='00.jpg')}}" alt="image" width="600px">
+        <img src="{{url_for('static', filename='01.jpg')}}" alt="image" width="600px">
+    </div>
+    <hr width="100%" color="#000">
+    <form action="{{url_for('main')}}" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="FULLname" placeholder="Your name", value="{{FULLname}}">
+        <button type="submit">SEND</button><br><br>
+        <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Your comment"></textarea>
+    </form>
+    <hr width="100%" color="#000">
+    <div id="comments">
+        <ul>
+            {% for comment in comments %}
+            <li>{{comment["fullname"]}}: {{comment["user_comment"]}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+</body>
+</html>

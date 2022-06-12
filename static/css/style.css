@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+    padding: 0;
+    margin: 0;
+}
+body{ 
+   background-color: #A8E4A0; 
+}
+#images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    margin: 1rem 0.5rem;
+}
+form{
+    margin-left: 1.5rem;
+}
